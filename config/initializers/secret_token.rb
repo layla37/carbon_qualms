@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CarbonQualms::Application.config.secret_key_base = '319b30173ed8952b2225ba5b266c838718eb809167504f05075531f1e244bc928e04f5c7feb7f5b69bc5124a3aa290b5da03190ae93a9a3ba1a79c8868239dd1'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+CarbonQualms::Application.config.secret_key_base = secure_token
