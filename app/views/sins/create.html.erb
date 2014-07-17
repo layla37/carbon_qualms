@@ -1,0 +1,8 @@
+<p>Eco-Sin has been added to the list:</p>
+
+<% @sins.each do |x| %>
+		<p>
+			<strong><%= x.description %></strong><br>
+			<%= x.footprint %>
+		</p>
+	<% end %>

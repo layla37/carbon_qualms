@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717022753) do
+ActiveRecord::Schema.define(version: 20140717024729) do
 
-  create_table "bad_actions", force: true do |t|
+  create_table "sins", force: true do |t|
     t.text     "description"
     t.float    "footprint"
     t.datetime "created_at"
