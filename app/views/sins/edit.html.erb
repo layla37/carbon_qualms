@@ -1,12 +1,13 @@
 <p>EDIT Eco-Sin Form</p>
 
 
-<form action = "/sins/create" method = "post">
+<form action = "/sins/update" method = "post">
+	<input type="hidden" name="id" value="<%= @sin.id %>" >
 Naughty Eco-Action:
 	<input type = "text" name = "description" value ="<%= @sin.description %>"><br>
 Carbon Footprint:
 	<input type = "text" name = "footprint" value ="<%= @sin.footprint %>" ><br>
-	<input type = "submit" value = "Submit">
+	<input type = "submit" value = "Update">
 
 </form>
 

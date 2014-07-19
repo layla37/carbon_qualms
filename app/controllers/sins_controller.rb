@@ -23,12 +23,26 @@ class SinsController < ApplicationController
   	end
 
     def edit
-    	@id = params["id"]
-    	@sin = Sin.find(@id)
+    	id = params["id"]
+    	@sin = Sin.find(id)
     	
   	end
 
   	def update
+  		#get the id from params
+  		id = params["id"]
+
+  		#find the sin object with the id
+  		@sin = Sin.find(id)
+
+  		#get the footprint and description from the params object
+  		@sin.update(description: params["description"])
+		@sin.update(footprint: params["footprint"])
+
+  		#update the sin object with the new footprint and description using the update method
+
+
+  		redirect_to :controller => 'home', :action => 'index'
   	end
 
   	def destroy
