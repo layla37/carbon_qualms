@@ -3,9 +3,13 @@
 
 <form action = "/sins/create" method = "post">
 Naughty Eco-Action:
-	<input type = "text" name = "description" ><br>
+	<input type = "text" name = "description" value ="<%= @sin.description %>"><br>
 Carbon Footprint:
-	<input type = "text" name = "footprint"><br>
+	<input type = "text" name = "footprint" value ="<%= @sin.footprint %>" ><br>
 	<input type = "submit" value = "Submit">
 
 </form>
+
+<%= @sin.id %><br>
+<%= @sin.description %><br>
+<%= @sin.footprint %><br>

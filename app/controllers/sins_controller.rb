@@ -13,6 +13,7 @@ class SinsController < ApplicationController
 		b.description = params["description"]
 		b.footprint = params["footprint"]
 		b.save
+		@sins = Sin.all
 	end
 
 	def show
@@ -22,6 +23,9 @@ class SinsController < ApplicationController
   	end
 
     def edit
+    	@id = params["id"]
+    	@sin = Sin.find(@id)
+    	
   	end
 
   	def update
