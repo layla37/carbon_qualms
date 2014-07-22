@@ -14,6 +14,7 @@ class SinsController < ApplicationController
 		b.footprint = params["footprint"]
 		b.save
 		@sins = Sin.all
+		redirect_to :controller => 'home', :action => 'index'
 	end
 
 	def show
@@ -36,8 +37,8 @@ class SinsController < ApplicationController
   		@sin = Sin.find(id)
 
   		#get the footprint and description from the params object
-  		@sin.update(description: params["description"])
-		@sin.update(footprint: params["footprint"])
+  		@sin.update(description: params["description"], footprint: params["footprint"])
+
 
   		#update the sin object with the new footprint and description using the update method
 
@@ -46,6 +47,14 @@ class SinsController < ApplicationController
   	end
 
   	def destroy
+  		#get the id from params
+  		id = params["id"]
+
+  		#find the sin object with the id
+  		@sin = Sin.find(id)
+  		@sin.destroy
+  		redirect_to :controller => 'home', :action => 'index'
+
   	end
 
 end

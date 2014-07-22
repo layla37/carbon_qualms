@@ -4,6 +4,10 @@ CarbonQualms::Application.routes.draw do
   get "sins/edit"
   post "sins/create"
   post "sins/update"
+  get "sins/destroy"
+
+
+  resources :penances
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

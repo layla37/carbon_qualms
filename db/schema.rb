@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717024729) do
+ActiveRecord::Schema.define(version: 20140719205745) do
+
+  create_table "penances", force: true do |t|
+    t.string   "description"
+    t.float    "footprint"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sins", force: true do |t|
     t.text     "description"

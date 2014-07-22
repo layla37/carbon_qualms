@@ -11,6 +11,8 @@ Carbon Footprint:
 
 </form>
 
-<%= @sin.id %><br>
-<%= @sin.description %><br>
-<%= @sin.footprint %><br>
+<%= link_to "Delete", {controller: "sins", action: "destroy", id: @sin.id } %>
+
+sin id: <%= @sin.id %><br>
+sin: <%= @sin.description %><br>
+carbon footprint: <%= @sin.footprint %><br>
