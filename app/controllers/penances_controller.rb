@@ -4,10 +4,13 @@ class PenancesController < ApplicationController
 	end
 
 	def new
+		@penance = Penance.new
 	end
 
 	def create
-
+		@penance = Penance.new(penance_params)
+		@penance.save
+		@penances = Penance.all	
 	end
 
 	def show
@@ -19,5 +22,10 @@ class PenancesController < ApplicationController
 
 	def update
 	end
+
+	private
+	  def penance_params
+	    params.require(:penance).permit(:description, :footprint)
+	  end
 
 end

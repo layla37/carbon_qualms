@@ -1,13 +1,9 @@
-<p>Eco-Sin Form</p>
+<h1>Penance Form</h1>
 
-
-<form action = "/sins/create" method = "post">
-Naughty Eco-Action:
-	<input type = "text" name = "description" ><br>
-Carbon Footprint:
-	<input type = "text" name = "footprint"><br>
-	<input type = "submit" value = "Submit">
-
-</form>
-
-<%= date_field_tag :date %>
+<%= form_for @penance, url: {action: "create"} do |f| %>
+<p>Penance Description:<br>
+  <%= f.text_field :description %></p>
+<p>Carbon Footprint:<br>
+  <%= f.text_field :footprint %></p>
+  <%= f.submit "Create" %>
+<% end %>
