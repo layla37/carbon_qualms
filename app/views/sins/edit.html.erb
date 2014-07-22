@@ -1,18 +1,21 @@
 <p>EDIT Eco-Sin Form</p>
 
 
-<form action = "/sins/update" method = "post">
-	<input type="hidden" name="id" value="<%= @sin.id %>" >
-Naughty Eco-Action:
-	<input type = "text" name = "description" value ="<%= @sin.description %>"><br>
-Carbon Footprint:
-	<input type = "text" name = "footprint" value ="<%= @sin.footprint %>" ><br>
-	<input type = "submit" value = "Update">
+<%= form_for :sin, url: sin_path(@sin), method: :patch do |f| %>
 
-</form>
-
-<%= link_to "Delete", {controller: "sins", action: "destroy", id: @sin.id } %>
-
-sin id: <%= @sin.id %><br>
-sin: <%= @sin.description %><br>
-carbon footprint: <%= @sin.footprint %><br>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+ 
+  <p>
+    <%= f.label :footprint %><br>
+    <%= f.text_area :footprint %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Back', sins_path %>

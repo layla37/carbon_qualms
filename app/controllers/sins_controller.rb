@@ -1,49 +1,35 @@
 class SinsController < ApplicationController
 
-	# TODO this is a quick hack but I need to figure out how to 
-	# deal with the cookies and the secret token thing.
-	skip_before_action :verify_authenticity_token
-
 	def index
 		@sins = Sin.all
 	end
 
 	def create
-		b = Sin.new
-		b.description = params["description"]
-		b.footprint = params["footprint"]
-		b.save
-		@sins = Sin.all
-		redirect_to :controller => 'home', :action => 'index'
+		@sin = Sin.new(sin_params)
+    @sin.save
+    @sins = Sin.all 
 	end
 
 	def show
-  	end
+    @sin = Sin.find(params[:id])  
+  end
 
   	def new
+      @sin = Sin.new
   	end
 
     def edit
-    	id = params["id"]
-    	@sin = Sin.find(id)
-    	
+    	@sin = Sin.find(params[:id])   	
   	end
 
   	def update
-  		#get the id from params
-  		id = params["id"]
-
-  		#find the sin object with the id
-  		@sin = Sin.find(id)
-
-  		#get the footprint and description from the params object
-  		@sin.update(description: params["description"], footprint: params["footprint"])
-
-
-  		#update the sin object with the new footprint and description using the update method
-
-
-  		redirect_to :controller => 'home', :action => 'index'
+  		@sin = Sin.find(params[:id])    
+ 
+      if @sin.update(sin_params)
+        redirect_to @sin
+      else
+        render 'edit'
+      end
   	end
 
   	def destroy
@@ -56,5 +42,10 @@ class SinsController < ApplicationController
   		redirect_to :controller => 'home', :action => 'index'
 
   	end
+
+private
+    def sin_params
+      params.require(:sin).permit(:description, :footprint)
+    end
 
 end
