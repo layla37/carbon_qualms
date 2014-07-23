@@ -1,0 +1,23 @@
+<p>EDIT Penance</p>
+
+
+<%= form_for :penance, url: penance_path(@penance), method: :patch do |f| %>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+ 
+  <p>
+    <%= f.label :footprint %><br>
+    <%= f.text_area :footprint %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Destroy', penance_path(@penance),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+ 

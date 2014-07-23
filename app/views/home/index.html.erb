@@ -1,14 +1,7 @@
 	<h1>Alleviate your Eco-Anxiety with some good old fashioned penance!</h1>
 	
 
-	</p><%= link_to "Create a new eco-sin", {controller: "sins", action: "new"} %>
 
-	<% @sins.each do |x| %>
-		<p>
-			<strong>
-				<%= link_to x.description, {controller: "sins", action: "edit", id: x.id } %>
-			</strong><br>
-			<%= x.footprint %>
-		</p>
-	<% end %>
+				<%= link_to "Eco-Sins", {controller: "sins", action: "index" } %><br>
+				<%= link_to "Penances", {controller: "penances", action: "index" } %>
 

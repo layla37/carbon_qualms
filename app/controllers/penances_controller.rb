@@ -1,6 +1,7 @@
 class PenancesController < ApplicationController
 
 	def index
+		@penances = Penance.all	
 	end
 
 	def new
@@ -14,14 +15,29 @@ class PenancesController < ApplicationController
 	end
 
 	def show
-
+		@penance = Penance.find(params[:id]) 
 	end
 
-	def destroy
-	end
+	def edit
+    	@penance = Penance.find(params[:id])   	
+  	end
 
-	def update
-	end
+  	def update
+  		@penance = Penance.find(params[:id])    
+ 
+    	if @penance.update(penance_params)
+      		redirect_to @penance
+    	else
+      	render 'edit'
+    	end
+  	end
+
+  	def destroy
+    	@penance = Penance.find(params[:id])
+    	@penance.destroy
+   
+    	redirect_to root_path
+  	end
 
 	private
 	  def penance_params
