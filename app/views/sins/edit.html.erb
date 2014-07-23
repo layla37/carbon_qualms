@@ -17,5 +17,7 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Destroy', sin_path(@sin),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
  
-<%= link_to 'Back', sins_path %>

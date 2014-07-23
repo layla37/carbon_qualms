@@ -1,11 +1,5 @@
 CarbonQualms::Application.routes.draw do
   get "home/index"
-  # get "sins/new"
-  # get "sins/edit"
-  # post "sins/create"
-  # post "sins/update"
-  # get "sins/destroy"
-
 
   resources :penances 
   resources :sins

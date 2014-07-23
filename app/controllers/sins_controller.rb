@@ -14,34 +14,30 @@ class SinsController < ApplicationController
     @sin = Sin.find(params[:id])  
   end
 
-  	def new
-      @sin = Sin.new
-  	end
+  def new
+    @sin = Sin.new
+  end
 
-    def edit
-    	@sin = Sin.find(params[:id])   	
-  	end
+  def edit
+    @sin = Sin.find(params[:id])   	
+  end
 
-  	def update
-  		@sin = Sin.find(params[:id])    
+  def update
+  	@sin = Sin.find(params[:id])    
  
-      if @sin.update(sin_params)
-        redirect_to @sin
-      else
-        render 'edit'
-      end
-  	end
+    if @sin.update(sin_params)
+      redirect_to @sin
+    else
+      render 'edit'
+    end
+  end
 
-  	def destroy
-  		#get the id from params
-  		id = params["id"]
-
-  		#find the sin object with the id
-  		@sin = Sin.find(id)
-  		@sin.destroy
-  		redirect_to :controller => 'home', :action => 'index'
-
-  	end
+  def destroy
+    @sin = Sin.find(params[:id])
+    @sin.destroy
+   
+    redirect_to root_path
+  end
 
 private
     def sin_params
