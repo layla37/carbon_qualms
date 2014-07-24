@@ -1,6 +1,6 @@
 CarbonQualms::Application.routes.draw do
   get "home/index"
-
+  post "home/compute_penance"
   resources :penances 
   resources :sins
 
