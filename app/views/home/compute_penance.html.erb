@@ -1,1 +1,8 @@
-hi
+	<% @computed_penances.each do |x| %>
+		<p>
+			<strong>
+				<%= x.description %>
+			</strong><br>
+			<%= x.footprint %>
+		</p>
+	<% end %>
