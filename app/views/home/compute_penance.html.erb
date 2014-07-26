@@ -1,4 +1,6 @@
-	<% @computed_penances.each do |x| %>
+	
+	<% random_penances = @computed_penances.shuffle[0..2] %>
+	<% random_penances.each do |x| %>
 		<p>
 			<strong>
 				<%= x.description %>
