@@ -14,9 +14,11 @@
 
 body{
 	background:#888888;
-background-image: image-url('carbon-qualms-bg.jpg');
-background-repeat:no-repeat;
-background-size: 100%;
+	background-image: image-url('carbon-qualms-bg.jpg');
+	background-repeat:no-repeat;
+	background-size: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+
 
 }
 
@@ -26,6 +28,7 @@ h1{
 .container-frame{
 	margin:0px auto;
 	margin-top:20%;
+	margin-bottom:10%;
 	width:70%;
 	background: #95AB56;
 	padding:2em;
@@ -51,12 +54,15 @@ h1{
 }
 
 .styled-select {
-   width: 230px;
-   height: 34px;
-   overflow: hidden;
-   border: 1px solid #ccc;
-   font-size:1em;
-   }
+	width: 230px;
+	height: 34px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	font-size:1em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }
 
 .styled-submit{
 	margin-top:15px;
@@ -66,6 +72,15 @@ h1{
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	border-radius:10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.copyright{
+	position: fixed;
+    bottom: 1.5em;
+    left: 1em;
 }
 
 a:link {
@@ -86,4 +101,45 @@ a:hover {
 a:active {
 	text-decoration: none;
 	color: #333333;
+}
+
+.copyright a:link {
+	text-decoration: none;
+	color: #333333;
+}
+
+.copyright a:visited {
+	text-decoration: none;
+	color: #333333;
+}
+
+.copyright a:hover {
+	text-decoration: none;
+	color: #AB685E;
+}
+
+.copyright a:active {
+	text-decoration: none;
+	color: #AB685E;
+}
+
+/************Media Queries for 480px and below***********************/
+@media only screen and (max-width: 750px) {
+
+	h1{
+		font-size:1.5em;
+	}
+
+	.container-frame{
+		width:90%;
+		padding:.5em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.container{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 }
