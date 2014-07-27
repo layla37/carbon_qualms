@@ -78,7 +78,7 @@ h1{
 }
 
 .copyright{
-	position: fixed;
+	position: relative;
     bottom: 1.5em;
     left: 1em;
 }
@@ -123,7 +123,7 @@ a:active {
 	color: #AB685E;
 }
 
-/************Media Queries for 480px and below***********************/
+/************Media Queries for 750px and below***********************/
 @media only screen and (max-width: 750px) {
 
 	h1{
@@ -140,6 +140,23 @@ a:active {
 	.container{
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+}
+
+/************Media Queries for 480px and below***********************/
+@media only screen and (max-width: 480px) {
+
+
+	.container-frame{
+		margin-top:5%;
+		width:96%;
+		padding:.2em;
+	}
+
+	.container{
+		width:90%;
+		padding: .5em;
 	}
 
 }
