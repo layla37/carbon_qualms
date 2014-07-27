@@ -3,8 +3,8 @@
 	<%= form_tag(controller: "home", action: "compute_penance") do %>
 
 		<% options = options_from_collection_for_select(@sins, 'id', 'description') %>
-		<%= select_tag :id,  options %>
-		<%= submit_tag("Search") %>
+		<%= select_tag :id, options, class: "styled-select" %><br>
+		<%= submit_tag("Confess Your Sin", class: "styled-submit") %>
 
 	<% end %>
 
