@@ -1,10 +1,13 @@
 	
+	<h1>Choose a penance from below and you shall be forgiven: </h1>
 	<% random_penances = @computed_penances.shuffle[0..2] %>
 	<% random_penances.each do |x| %>
 		<p>
 			<strong>
-				<%= x.description %>
+				&bull; <%= x.description %>
 			</strong><br>
-			<%= x.footprint %>
+			
 		</p>
 	<% end %>
+
+	<%= link_to 'Confess another eco-sin', root_path %>

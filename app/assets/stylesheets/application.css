@@ -11,3 +11,61 @@
  *= require_self
  *= require_tree .
  */
+
+body{
+	background:#888888;
+background-image:url('carbon-qualms-bg.jpg');
+background-repeat:no-repeat;
+background-size: 100%;
+
+}
+
+h1{
+	color:#555F39;
+}
+.container-frame{
+		margin:0px auto;
+	margin-top:20%;
+	width:70%;
+	background: #95AB56;
+	padding:2em;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius:20px;
+
+}
+
+.container{
+	background: #cccccc;
+	width:80%;
+	margin:8px auto;
+	padding:20px 40px;
+	border-width: 2px;
+	border-style:solid;
+	border-color:#c6e46b;
+
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius:20px;
+
+}
+
+a:link {
+	text-decoration: underline;
+	color: #AB685E;
+}
+
+a:visited {
+	text-decoration: underline;
+	color: #AB685E;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #333333;
+}
+
+a:active {
+	text-decoration: none;
+	color: #333333;
+}
