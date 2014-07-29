@@ -25,18 +25,20 @@ body{
 h1{
 	color:#555F39;
 }
+
+
 .container-frame{
 	margin:0px auto;
-	margin-top:20%;
+	margin-top:15%;
 	margin-bottom:10%;
 	width:70%;
 	background: #95AB56;
-	padding:2em;
+	padding:2em .5em;
 	-moz-border-radius:20px;
 	-webkit-border-radius:20px;
 	border-radius:20px;
-
 }
+
 
 .container{
 	background: #cccccc;
@@ -46,7 +48,6 @@ h1{
 	border-width: 2px;
 	border-style:solid;
 	border-color:#c6e46b;
-
 	-moz-border-radius:20px;
 	-webkit-border-radius:20px;
 	border-radius:20px;
