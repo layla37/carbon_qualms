@@ -2,7 +2,7 @@
 
 <% @penances.each do |x| %>
 		<p>
-			<strong><%= x.description %></strong><br>
+			<%= link_to x.description, {controller: "penances", action: "edit", id: x.id } %><br>
 			<%= x.footprint %>
 		</p>
 	<% end %>

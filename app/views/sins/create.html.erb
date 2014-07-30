@@ -2,7 +2,9 @@
 
 <% @sins.each do |x| %>
 		<p>
-			<strong><%= x.description %></strong><br>
+			
+			<%= link_to x.description, {controller: "sins", action: "edit", id: x.id } %><br>
 			<%= x.footprint %>
 		</p>
 	<% end %>
+<%= link_to 'Home', root_path %><br>

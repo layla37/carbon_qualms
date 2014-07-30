@@ -1,5 +1,8 @@
 class PenancesController < ApplicationController
 
+	# TODO - Need to move name/PW to a config file
+	http_basic_authenticate_with :name => "layla", :password => "spaghetti"
+	
 	def index
 		@penances = Penance.all	
 	end

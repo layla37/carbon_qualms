@@ -1,5 +1,8 @@
 class SinsController < ApplicationController
 
+  # TODO - Need to move name/PW to a config file
+  http_basic_authenticate_with :name => "layla", :password => "spaghetti"
+
 	def index
 		@sins = Sin.all
 	end
@@ -35,7 +38,6 @@ class SinsController < ApplicationController
   def destroy
     @sin = Sin.find(params[:id])
     @sin.destroy
-   
     redirect_to root_path
   end
 
